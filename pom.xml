@@ -6,7 +6,27 @@
 
     <groupId>org.example</groupId>
     <artifactId>ANTLR-Calculator</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
+
+    <properties>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr4-maven-plugin</artifactId>
+            <version>4.10.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.tunnelvisionlabs</groupId>
+            <artifactId>antlr4-runtime</artifactId>
+            <version>4.9.0</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -17,12 +37,28 @@
                     <target>17</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.antlr</groupId>
+                <artifactId>antlr4-maven-plugin</artifactId>
+                <version>4.3</version>
+                <executions>
+                    <execution>
+                        <configuration>
+                            <arguments>
+                                <argument>-visitor</argument>
+                                <argument>-package</argument>
+                                <argument>src/main/java/generated</argument>
+                            </arguments>
+                        </configuration>
+                        <id>antlr4</id>
+                        <goals>
+                            <goal>antlr4</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
-    <properties>
-        <maven.compiler.source>18</maven.compiler.source>
-        <maven.compiler.target>18</maven.compiler.target>
-    </properties>
 
 </project>

@@ -1,4 +1,4 @@
-lexer grammar NumbersLexer;
+lexer grammar CalculatorLexer;
 
 ZERO    : '0' | 'zero'  ;
 ONE     : '1' | 'one'   ;
@@ -14,7 +14,7 @@ NINE    : '9' | 'nine'  ;
 PLUS    : '+' | 'plus';
 MINUS   : '-' | 'minus';
 MULTIPLY: '*' | 'multiply' | 'multiply by';
-DIVIDE  : '/' | 'divide';
+DIVIDE  : '/' | 'divide'   | 'divided by';
 
 DOT: '.' | 'dot' | 'point';
 WHITESPACE: ' ';
